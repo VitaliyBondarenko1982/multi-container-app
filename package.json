@@ -1,0 +1,10 @@
+{
+  "name": "multi",
+  "version": "1.0.0",
+  "scripts": {
+    "run:db": "docker run --name mongodb -v data:/data/db --rm -d --network goals-net -e MONGO_INITDB_ROOT_USERNAME=vitalii -e MONGO_INITDB_ROOT_PASSWORD=secret mongo",
+    "stop:db": "docker stop mongodb",
+    "stop:server": "docker stop goals-backend",
+    "stop:client": "docker stop goals-frontend"
+  }
+}

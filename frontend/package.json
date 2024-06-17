@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:client-image": "docker build -t goals-react .",
+    "run:client": "docker run --name goals-frontend --rm -p 3000:3000 -it goals-react"
   },
   "eslintConfig": {
     "extends": [

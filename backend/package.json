@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build:server-image": "docker build -t goals-node .",
+    "run:server": "docker run --name goals-backend -v $(pwd):/app -v logs:/app/logs -v /app/node_modules -e MONGODB_USERNAME=vitalii --rm -p 80:80 --network goals-net goals-node"
   },
   "author": "Maximilian Schwarzmüller / Academind GmbH",
   "license": "ISC",
